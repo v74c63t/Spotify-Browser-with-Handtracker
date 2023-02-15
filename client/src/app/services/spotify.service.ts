@@ -45,7 +45,15 @@ export class SpotifyService {
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
 
     var encode = encodeURIComponent(resource);
-    return null as any;
+    console.log(category);
+    console.log(resource);
+    var endpoint = '/search/' + category + '/' + encode;
+    console.log(encode);
+    console.log(endpoint);
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      console.log(data);
+      return null as any;
+    });
   }
 
   getArtist(artistId:string):Promise<ArtistData> {
@@ -59,36 +67,43 @@ export class SpotifyService {
 
   getRelatedArtists(artistId:string):Promise<ArtistData[]> {
     //TODO: use the related artist endpoint to make a request to express and return an array of artist data.
+    var endpoint = '/artist-related-artists/' + artistId;
    return null as any;
   }
 
   getTopTracksForArtist(artistId:string):Promise<TrackData[]> {
     //TODO: use the top tracks endpoint to make a request to express.
+    var endpoint = '/artist-top-tracks/' + artistId;
     return null as any;
   }
 
   getAlbumsForArtist(artistId:string):Promise<AlbumData[]> {
     //TODO: use the albums for an artist endpoint to make a request to express.
+    var endpoint = '/artist-albums/' + artistId;
     return null as any;
   }
 
   getAlbum(albumId:string):Promise<AlbumData> {
     //TODO: use the album endpoint to make a request to express.
+    var endpoint = '/album/' + albumId;
     return null as any;
   }
 
   getTracksForAlbum(albumId:string):Promise<TrackData[]> {
     //TODO: use the tracks for album endpoint to make a request to express.
+    var endpoint = '/album-tracks/' + albumId;
     return null as any;
   }
 
   getTrack(trackId:string):Promise<TrackData> {
     //TODO: use the track endpoint to make a request to express.
+    var endpoint = '/track/' + trackId;
     return null as any;
   }
 
   getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
     //TODO: use the audio features for track endpoint to make a request to express.
+    var endpoint = '/track-audio-features/' + trackId;
     return null as any;
   }
 }
