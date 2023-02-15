@@ -1,10 +1,10 @@
---Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
+--Readme document for Vanessa Tang*author(s)*, vanesst5@uci.edu*email(s)*, 86856328*UCI id(s)*--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
 */20
 - */2 Communicating with the webserver
-- */3 Populating information about the user
+- 3/3 Populating information about the user
 - */4 Populating the search component
 - */5 Artist page
 - */3 Album page
@@ -12,7 +12,8 @@
 
 
 2. How long, in hours, did it take you to complete this assignment?
-
+Monday:  1-2 hrs
+Tuesday: 3 hrs
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
