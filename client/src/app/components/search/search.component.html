@@ -1,10 +1,14 @@
 <h1>Search Spotify</h1>
 <!--TODO: bind input's model to searchString-->
-<input>
+<input [(ngModel)]="searchString">
 <!--TODO: bind select's model to searchCategory-->
 <select>
 	<!--TODO: loop over searchCategories to create dropdown options-->
 	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
+	<option *ngFor="let category of searchCategories" [value] = "category">{{category}}</option>
+	<!-- <option value="{{searchCategories[0]}}">{{searchCategories[0]}}</option>
+	<option value="{{searchCategories[1]}}">{{searchCategories[1]}}</option>
+	<option value="{{searchCategories[2]}}">{{searchCategories[2]}}</option> -->
 </select>
 <!--TODO: Call search function when the button is clicked-->
 <button class="btn btn-light"(click) = "search()">Search</button>
