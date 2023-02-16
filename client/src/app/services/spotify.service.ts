@@ -45,14 +45,34 @@ export class SpotifyService {
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
 
     var encode = encodeURIComponent(resource);
-    console.log(category);
-    console.log(resource);
+    // console.log(category);
+    // console.log(resource);
     var endpoint = '/search/' + category + '/' + encode;
-    console.log(encode);
-    console.log(endpoint);
+    // console.log(encode);
+    // console.log(endpoint);
     return this.sendRequestToExpress(endpoint).then((data) => {
-      console.log(data);
-      return null as any;
+      // console.log(data);
+      // console.log(data.artists.items);
+      // console.log(data.artists.items.length); 
+      // for( var i = 0; i < data.size; i++) {
+      //   console.log(data[i]);
+      // }
+      var result = [];
+      var items = data.artists.items;
+      for(var i = 0; i < items.length; i++) {
+        if(category == 'artist') {
+          result.push(new ArtistData(items[i]));
+        }
+        else if(category == 'album') {
+          result.push(new AlbumData(items[i]));
+        }
+        else if(category == 'track') {
+          result.push(new TrackData(items[i]));
+        }
+      }
+      //return null as any;
+      //console.log(result);
+      return result;
     });
   }
 
