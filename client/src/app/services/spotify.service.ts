@@ -106,7 +106,9 @@ export class SpotifyService {
   getAlbum(albumId:string):Promise<AlbumData> {
     //TODO: use the album endpoint to make a request to express.
     var endpoint = '/album/' + albumId;
-    return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      return new AlbumData(data);
+    });
   }
 
   getTracksForAlbum(albumId:string):Promise<TrackData[]> {
@@ -118,7 +120,9 @@ export class SpotifyService {
   getTrack(trackId:string):Promise<TrackData> {
     //TODO: use the track endpoint to make a request to express.
     var endpoint = '/track/' + trackId;
-    return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      return new TrackData(data);
+    });
   }
 
   getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
