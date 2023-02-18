@@ -33,7 +33,7 @@ We did not consult other classmates or individuals on this assignment.
 
 
 5. Did you add a bonus feature to your submission? If so, what is it and how should we see it?
-
+Triggered search with enter by using keyup.enter with input
 
 
 6. Is there anything special we need to know in order to run your code?
