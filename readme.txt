@@ -16,7 +16,7 @@ Monday:  1-2 hrs
 Tuesday: 3 hrs
 Wednesday: 3-4 hrs
 Thursday: 1-2 hrs
-Friday: 7 hrs
+Friday: 8-9 hrs
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
@@ -24,6 +24,8 @@ https://developer.spotify.com/documentation/web-api/reference/
 https://www.w3schools.com/tags/att_option_selected.asp
 https://angular.io/api/common/NgIf
 https://angular.io/api/common/NgFor
+https://angular.io/api/core/Input
+https://docs.angular.lat/guide/inputs-outputs
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
