@@ -3,11 +3,11 @@
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
 */20
-- */2 Communicating with the webserver
+- 2/2 Communicating with the webserver
 - 3/3 Populating information about the user
-- */4 Populating the search component
-- */5 Artist page
-- */3 Album page
+- 4/4 Populating the search component
+- 5/5 Artist page
+- 3/3 Album page
 - */3 Track page
 
 
@@ -29,7 +29,7 @@ https://docs.angular.lat/guide/inputs-outputs
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-
+We did not consult other classmates or individuals on this assignment.
 
 
 5. Did you add a bonus feature to your submission? If so, what is it and how should we see it?
@@ -37,4 +37,4 @@ https://docs.angular.lat/guide/inputs-outputs
 
 
 6. Is there anything special we need to know in order to run your code?
-
+There is not anything special you need to know in order to run our code.
