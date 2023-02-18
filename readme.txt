@@ -15,6 +15,8 @@
 Monday:  1-2 hrs
 Tuesday: 3 hrs
 Wednesday: 3-4 hrs
+Thursday: 1-2 hrs
+Friday: 7 hrs
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
