@@ -45,20 +45,19 @@ export class SpotifyService {
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
 
     var encode = encodeURIComponent(resource);
-    // console.log(category);
-    // console.log(resource);
     var endpoint = '/search/' + category + '/' + encode;
-    // console.log(encode);
-    // console.log(endpoint);
     return this.sendRequestToExpress(endpoint).then((data) => {
-      // console.log(data);
-      // console.log(data.artists.items);
-      // console.log(data.artists.items.length); 
-      // for( var i = 0; i < data.size; i++) {
-      //   console.log(data[i]);
-      // }
       var result = [];
-      var items = data.artists.items;
+      if (category == 'artist') {
+        var items = data.artists.items;
+      }
+      else if(category == 'album') {
+        var items = data.albums.items;
+      }
+      else if(category == 'track') {
+        var items = data.tracks.items;
+      }
+      
       for(var i = 0; i < items.length; i++) {
         if(category == 'artist') {
           result.push(new ArtistData(items[i]));
@@ -70,8 +69,6 @@ export class SpotifyService {
           result.push(new TrackData(items[i]));
         }
       }
-      //return null as any;
-      //console.log(result);
       return result;
     });
   }
@@ -88,19 +85,37 @@ export class SpotifyService {
   getRelatedArtists(artistId:string):Promise<ArtistData[]> {
     //TODO: use the related artist endpoint to make a request to express and return an array of artist data.
     var endpoint = '/artist-related-artists/' + artistId;
-   return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      var result = [];
+      for( var i = 0; i < data.artists.length; i++) {
+        result.push(new ArtistData(data.artists[i]));
+      }
+      return result;
+    });
   }
 
   getTopTracksForArtist(artistId:string):Promise<TrackData[]> {
     //TODO: use the top tracks endpoint to make a request to express.
     var endpoint = '/artist-top-tracks/' + artistId;
-    return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      var result = [];
+      for( var i = 0; i < data.tracks.length; i++) {
+        result.push(new TrackData(data.tracks[i]));
+      }
+      return result;
+    });
   }
 
   getAlbumsForArtist(artistId:string):Promise<AlbumData[]> {
     //TODO: use the albums for an artist endpoint to make a request to express.
     var endpoint = '/artist-albums/' + artistId;
-    return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      var result = [];
+      for( var i = 0; i < data.items.length; i++) {
+        result.push(new AlbumData(data.items[i]));
+      }
+      return result;
+    });
   }
 
   getAlbum(albumId:string):Promise<AlbumData> {
@@ -114,7 +129,13 @@ export class SpotifyService {
   getTracksForAlbum(albumId:string):Promise<TrackData[]> {
     //TODO: use the tracks for album endpoint to make a request to express.
     var endpoint = '/album-tracks/' + albumId;
-    return null as any;
+    return this.sendRequestToExpress(endpoint).then((data) => {
+      var result = [];
+      for( var i = 0; i < data.items.length; i++) {
+        result.push(new TrackData(data.items[i]));
+      }
+      return result;
+    });
   }
 
   getTrack(trackId:string):Promise<TrackData> {
@@ -128,6 +149,13 @@ export class SpotifyService {
   getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
     //TODO: use the audio features for track endpoint to make a request to express.
     var endpoint = '/track-audio-features/' + trackId;
+    // return this.sendRequestToExpress(endpoint).then((data) => {
+    //   var result = [];
+    //   for( var i = 0; i < data.size; i++) {
+    //     result.push(new TrackFeature(data[i], dk for percent part));
+    //   }
+    //   return result;
+    // });
     return null as any;
   }
 }
