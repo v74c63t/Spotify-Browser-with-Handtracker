@@ -1,4 +1,4 @@
---Readme document for Vanessa Tang*author(s)*, vanesst5@uci.edu*email(s)*, 86856328*UCI id(s)*--
+--Readme document for Vanessa Tang, Jaime Park, vanesst5@uci.edu, jaimesp@uci.edu, 86856328, 40361959--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
