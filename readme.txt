@@ -17,7 +17,7 @@ Tuesday: 3 hrs
 Wednesday: 3-4 hrs
 Thursday: 1-2 hrs
 Friday: 8-9 hrs
-Saturday: 2? hrs
+Saturday: 3-4? hrs
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
@@ -36,6 +36,8 @@ We did not consult other classmates or individuals on this assignment.
 
 5. Did you add a bonus feature to your submission? If so, what is it and how should we see it?
 Triggered search with enter by using keyup.enter with input
+Changed some of the background colors of the pages, the text colors for the text on each page, and changed the colors of the links
+so it would be stand out more (Not sure if this is considered a bonus feature)
 
 
 6. Is there anything special we need to know in order to run your code?
