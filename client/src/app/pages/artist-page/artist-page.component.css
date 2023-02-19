@@ -6,3 +6,8 @@
 app-artist {
 	vertical-align: middle;
 }
+
+.background {
+	background-color:darkslategray;
+	color:darkblue;
+}
