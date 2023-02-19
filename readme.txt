@@ -8,7 +8,7 @@
 - 4/4 Populating the search component
 - 5/5 Artist page
 - 3/3 Album page
-- */3 Track page
+- 3/3 Track page
 
 
 2. How long, in hours, did it take you to complete this assignment?
@@ -17,6 +17,7 @@ Tuesday: 3 hrs
 Wednesday: 3-4 hrs
 Thursday: 1-2 hrs
 Friday: 8-9 hrs
+Saturday: 2? hrs
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
