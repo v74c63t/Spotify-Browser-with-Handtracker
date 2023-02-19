@@ -4,13 +4,13 @@
 		<h1>{{track.name}}</h1>
 		<p>
 			<!--TODO: link to album page, display album name-->
-			Track on <a href = "/album/{{track.album.id}}">{{track.album.name}}</a>
+			Track on <a href = "/album/{{track.album.id}}" class="link">{{track.album.name}}</a>
 		</p>
 		<div>
 			<!--TODO: loop over track's artists-->
 			<p *ngFor="let artist of track.artists">
 				<!--TODO: link to artist page, display artist name-->
-				Artist: <a href="/artist/{{artist.id}}">{{artist.name}}</a>
+				Artist: <a href="/artist/{{artist.id}}" class="link">{{artist.name}}</a>
 			</p>
 		</div>
 		<p>
