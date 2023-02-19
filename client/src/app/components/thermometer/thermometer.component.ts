@@ -8,11 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ThermometerComponent implements OnInit {
   //TODO: define Input fields and bind them to the template.
   @Input() audioFeature:string;
-	@Input() percentage:number;
-  @Input() color;
+	@Input() percentStr:string;
+  @Input() color:string;
+  style:string;
   constructor() { }
 
   ngOnInit() {
+    this.style="background-color:"+this.color+"; width:"+this.percentStr;
   }
 
 }
