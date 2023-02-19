@@ -19,5 +19,5 @@
 </div>
 <!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
 <div *ngIf="searchCategory == 'track'">
-	<app-track-list [tracks] = "resources" hideArtist = "false" hideAlbum = "false"></app-track-list>
+	<app-track-list [tracks] = "resources" [hideArtist] = "false" [hideAlbum] = "false"></app-track-list>
 </div>
