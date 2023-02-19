@@ -27,6 +27,7 @@ https://angular.io/api/common/NgIf
 https://angular.io/api/common/NgFor
 https://angular.io/api/core/Input
 https://docs.angular.lat/guide/inputs-outputs
+https://angular.io/guide/class-binding
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
