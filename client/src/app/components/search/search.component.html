@@ -5,7 +5,7 @@
 <select [(ngModel)] = "searchCategory">
 	<!--TODO: loop over searchCategories to create dropdown options-->
 	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
-	<option *ngFor="let category of searchCategories" [value] = "category">{{category}}</option>
+	<option *ngFor="let searchCategory of searchCategories" [value] = "searchCategory">{{searchCategory}}</option>
 	<!-- <option value="{{searchCategories[0]}}">{{searchCategories[0]}}</option>
 	<option value="{{searchCategories[1]}}">{{searchCategories[1]}}</option>
 	<option value="{{searchCategories[2]}}">{{searchCategories[2]}}</option> -->
@@ -13,11 +13,12 @@
 <!--TODO: Call search function when the button is clicked-->
 <button class="btn btn-light"(click) = "search()">Search</button>
 <!--TODO: Display a carousel component if searching for an artist or album. Bind carousel's resources and give it a static carouselId.-->
-<!-- {{searchCategory}} -->
-<div *ngIf="searchCategory != 'track'">
-	<app-carousel carouselId="searchCarousel" [resources]="resources"></app-carousel>
-</div>
-<!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
-<div *ngIf="searchCategory == 'track'">
-	<app-track-list [tracks] = "resources" [hideArtist] = "false" [hideAlbum] = "false"></app-track-list>
-</div>
+<div *ngIf="resources">
+	<div *ngIf="resources[0].category != 'track'">
+		<app-carousel carouselId="searchCarousel" [resources]="resources"></app-carousel>
+	</div>
+	<!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
+	<div *ngIf="resources[0].category == 'track'">
+		<app-track-list [tracks] = "resources" [hideArtist] = "false" [hideAlbum] = "false"></app-track-list>
+	</div>
+</div>	
