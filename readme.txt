@@ -12,12 +12,7 @@
 
 
 2. How long, in hours, did it take you to complete this assignment?
-Monday:  1-2 hrs
-Tuesday: 3 hrs
-Wednesday: 3-4 hrs
-Thursday: 1-2 hrs
-Friday: 8-9 hrs
-Saturday: 3-4? hrs
+~24 hours
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
