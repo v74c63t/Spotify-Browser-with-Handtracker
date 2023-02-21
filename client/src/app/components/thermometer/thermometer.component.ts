@@ -14,6 +14,9 @@ export class ThermometerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // this constructs the string used to set the style for the thermometer
+    // meaning it sets the color and width of the progress bar based on what
+    // the audio feature specifies
     this.style="background-color:"+this.color+"; width:"+this.percentStr;
   }
 
