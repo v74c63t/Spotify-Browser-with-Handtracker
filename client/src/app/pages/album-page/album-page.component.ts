@@ -4,6 +4,7 @@ import { ArtistData } from '../../data/artist-data';
 import { TrackData } from '../../data/track-data';
 import { AlbumData } from '../../data/album-data';
 import { SpotifyService } from 'src/app/services/spotify.service';
+import { PredictionEvent } from 'src/app/prediction-event';
 
 @Component({
   selector: 'app-album-page',
@@ -11,6 +12,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styleUrls: ['./album-page.component.css']
 })
 export class AlbumPageComponent implements OnInit {
+  gesture:string;
 	albumId:string;
 	album:AlbumData;
 	tracks:TrackData[];
@@ -27,6 +29,17 @@ export class AlbumPageComponent implements OnInit {
     this.spotifyService.getTracksForAlbum(this.albumId).then(data=>{
       this.tracks = data;
     });
+  }
+
+  prediction(event: PredictionEvent){
+    this.gesture = event.getPrediction();
+    // localStorage.setItem('gesture', this.gesture);
+    if(this.gesture == "Two Open Hands") {
+      //window.location.href = 'https://open.spotify.com/user/31by4hs6trtycq5feotdj2jskhrq';
+      if(this.album) {
+        window.location.href = this.album.url;
+      }
+    }
   }
 
 }

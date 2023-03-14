@@ -1,4 +1,9 @@
-<html class = "background">
+<div>
+	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<div [innerHTML]="gesture"></div>
+</div>
+
+<div class = "background">
 	<div *ngIf="artist" class="row">
 		<div class="col-6">
 			<!--TODO: populate with artist name-->
@@ -41,4 +46,4 @@
 		</div>
 
 	</div>
-</html>
+</div>

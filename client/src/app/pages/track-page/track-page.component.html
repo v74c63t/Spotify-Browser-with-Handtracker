@@ -1,4 +1,9 @@
-<html class="background">
+<div>
+	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<div [innerHTML]="gesture"></div>
+</div>
+
+<div class="background">
 	<div class="row">
 		<div *ngIf="track" class="col-6">
 			<!--TODO: populate with track name-->
@@ -28,4 +33,4 @@
 			<app-thermometer *ngFor="let audioFeature of audioFeatures" [audioFeature] = audioFeature.name [percentStr] = "audioFeature.percentageString" [color] = "audioFeature.color"></app-thermometer>
 		</div>
 	</div>
-</html>
+</div>
