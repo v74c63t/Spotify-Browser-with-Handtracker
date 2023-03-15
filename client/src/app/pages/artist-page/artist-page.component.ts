@@ -47,6 +47,9 @@ export class ArtistPageComponent implements OnInit {
         window.location.href = this.artist.url;
       }
     }
+    else if(this.gesture == "Two Closed Hands") {
+      window.location.href = "/"
+    }
   }
 
 }

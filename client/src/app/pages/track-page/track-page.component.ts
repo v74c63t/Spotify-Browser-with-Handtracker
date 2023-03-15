@@ -40,6 +40,9 @@ export class TrackPageComponent implements OnInit {
         window.location.href = this.track.url;
       }
     }
+    else if(this.gesture == "Two Closed Hands") {
+      window.location.href = "/"
+    }
   }
 
 }

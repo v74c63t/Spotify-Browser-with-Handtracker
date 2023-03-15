@@ -40,6 +40,9 @@ export class AlbumPageComponent implements OnInit {
         window.location.href = this.album.url;
       }
     }
+    else if(this.gesture == "Two Closed Hands") {
+      window.location.href = "/"
+    }
   }
 
 }
