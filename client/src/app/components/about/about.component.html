@@ -1,5 +1,11 @@
+
+
 <!--TODO: Define click callback to load about me information-->
 <button class="btn btn-light" (click) = "loadAboutMe()">Load info about me</button>
+<div>
+	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
+</div>
 <!--TODO: replace ??? to bind to name-->
 <h3>Logged in user: {{name}}</h3>
 <!--TODO: bind img src's to profile_pic-->
