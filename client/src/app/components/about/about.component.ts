@@ -52,6 +52,9 @@ export class AboutComponent implements OnInit {
     this.gesture = event.getPrediction();
     // localStorage.setItem('gesture', this.gesture);
     // console.log('hi');
+    if(this.gesture == "Open Hand") {
+      this.loadAboutMe();
+    }
     if(this.profile_link) {
       if(this.gesture == "Two Open Hands") {
       window.location.href = this.profile_link;
