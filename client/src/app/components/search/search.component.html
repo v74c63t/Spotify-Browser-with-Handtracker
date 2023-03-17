@@ -1,6 +1,21 @@
 <h1>Search Spotify</h1>
 <div>
-	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<br>
+	<div class="row">
+		<div class="col-3"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
+		<div class="col" style="color:antiquewhite">
+			<h5><strong>Gestures</strong></h5>
+			<p>
+				Hand Pointing: Change Search Category to Artist
+				<br>
+				Two Hands Pointing: Change Search Category to Album
+				<br>
+				One Open Hand and One Hand Pointing: Change Search Category to Track
+				<br>
+				One Open Hand and One Closed Hand: Search
+			</p>
+		</div>
+	</div>
 	<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
 </div>
 <!--TODO: bind input's model to searchString-->
