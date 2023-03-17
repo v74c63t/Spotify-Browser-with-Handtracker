@@ -1,5 +1,16 @@
 <div>
-	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<!-- <div>Two Open Hands</div> -->
+	<br>
+	<div class="row">
+		<div class="col-3"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
+		<div class="col" style="color:antiquewhite">
+			<p>
+				Two Open Hands: Open Profile on Spotify
+				<br>
+				Open Hand: Load Profile Information
+			</p>
+		</div>
+	</div>
 	<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
 </div>
 
