@@ -16,6 +16,8 @@ export class AlbumPageComponent implements OnInit {
 	albumId:string;
 	album:AlbumData;
 	tracks:TrackData[];
+  i:number = 0;
+  k:number = 0;
 
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
@@ -42,6 +44,26 @@ export class AlbumPageComponent implements OnInit {
     }
     else if(this.gesture == "Two Closed Hands") {
       window.location.href = "/"
+    }
+    else if(this.gesture == "Open Hand") {
+      window.location.href = "/artist/" + this.album.artists[this.i].id;
+    }
+    else if(this.gesture == "One Open Hand and One Closed Hand") {
+      window.location.href = "/track/" + this.tracks[this.k].id;
+    }
+    else if(this.gesture == "Hand Pointing") {
+      this.i++;
+      if(this.i > this.album.artists.length-1) {
+        this.i = 0;
+      }
+      this.gesture = "Hand Pointing - " + (this.i+1);
+    }
+    else if(this.gesture == "Two Hands Pointing") {
+      this.k++;
+      if(this.k > this.tracks.length-1){
+        this.k = 0;
+      }
+      this.gesture = "Two Hands Pointing - " + (this.k+1);
     }
   }
 
