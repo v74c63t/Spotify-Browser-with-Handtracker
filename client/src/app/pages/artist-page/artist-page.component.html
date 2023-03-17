@@ -1,9 +1,28 @@
-<div>
+<!-- <div>
 	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
 	<div [innerHTML]="gesture"></div>
-</div>
+</div> -->
 
 <div class = "background">
+	<div>
+		<br>
+		<div class="row">
+			<div class="col-3"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
+			<div class="col" style="color:antiquewhite">
+				<h5><strong>Gestures</strong></h5>
+				<p>
+					Two Open Hands: Open Page on Spotify
+					<br>
+					Two Closed Hands: Return to Home Page
+					<br>
+					One Open Hand and One Closed Hand: Open Track Page
+					<br>
+					Two Hands Pointing: Select Track
+				</p>
+			</div>
+		</div>
+		<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
+	</div>
 	<div *ngIf="artist" class="row">
 		<div class="col-6">
 			<!--TODO: populate with artist name-->
