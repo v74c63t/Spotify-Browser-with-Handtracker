@@ -4,6 +4,7 @@ import { ArtistData } from '../../data/artist-data';
 import { AlbumData } from '../../data/album-data';
 import { TrackData } from '../../data/track-data';
 import { ResourceData } from '../../data/resource-data';
+import { PredictionEvent } from 'src/app/prediction-event';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ import { ResourceData } from '../../data/resource-data';
   providers: [ SpotifyService ]
 })
 export class SearchComponent implements OnInit {
-  @Input() gesture:string;
+  gesture:string = "";
   searchString:string;
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
@@ -21,6 +22,26 @@ export class SearchComponent implements OnInit {
   constructor(private spotifyService:SpotifyService) { }
 
   ngOnInit() {
+  }
+
+  prediction(event: PredictionEvent){
+    this.gesture = event.getPrediction();
+    // localStorage.setItem('gesture', this.gesture);
+    // console.log('hi');
+    if(this.gesture == 'Hand Pointing') {
+      this.searchCategory = 'artist';
+    }
+    else if(this.gesture == 'Two Hands Pointing') {
+      this.searchCategory = 'album';
+    }
+    else if(this.gesture == 'One Open Hand and One Hand Pointing') {
+      this.searchCategory = 'track';
+    }
+    else if(this.gesture == 'One Open Hand and One Closed Hand') {
+      if(this.searchString) {
+        this.search();
+      }
+    }
   }
 
   // ngOnChange(changes: SimpleChanges) {
