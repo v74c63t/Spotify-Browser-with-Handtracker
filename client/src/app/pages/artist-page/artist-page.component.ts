@@ -18,6 +18,7 @@ export class ArtistPageComponent implements OnInit {
 	relatedArtists:ArtistData[];
 	topTracks:TrackData[];
 	albums:AlbumData[];
+  k:number = 0;
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
 
@@ -49,6 +50,16 @@ export class ArtistPageComponent implements OnInit {
     }
     else if(this.gesture == "Two Closed Hands") {
       window.location.href = "/"
+    }
+    else if(this.gesture == "One Open Hand and One Closed Hand") {
+      window.location.href = "/track/" + this.topTracks[this.k].id;
+    }
+    else if(this.gesture == "Two Hands Pointing") {
+      this.k++;
+      if(this.k > this.topTracks.length-1){
+        this.k = 0;
+      }
+      this.gesture = "Two Hands Pointing - " + (this.k+1);
     }
   }
 
