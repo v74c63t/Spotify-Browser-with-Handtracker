@@ -19,6 +19,7 @@ export class ArtistPageComponent implements OnInit {
 	topTracks:TrackData[];
 	albums:AlbumData[];
   k:number = 0;
+  toggle:string = "Album";
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
 
@@ -61,6 +62,26 @@ export class ArtistPageComponent implements OnInit {
       }
       this.gesture = "Two Hands Pointing - " + (this.k+1);
     }
+    else if(this.gesture == "Hand Pointing") {
+      this.toggle = "Album";
+      console.log(this.toggle);
+    }
+    else if(this.gesture == "Closed Hand") {
+      this.toggle = "Artist";
+      console.log(this.toggle);
+    }
+    if(this.gesture == "Open Hand") {
+      console.log(this.toggle);
+      if(this.toggle == "Album") {
+        var id = document.getElementById("artistAlbumCard");
+        window.location.href = id.getAttribute("href");
+      }
+      else if(this.toggle == "Artist") {
+        var id = document.getElementById("similarArtistCard");
+        window.location.href = id.getAttribute("href");
+      }
+    }
+
   }
 
 }

@@ -5,6 +5,7 @@ import { AlbumData } from '../../data/album-data';
 import { TrackData } from '../../data/track-data';
 import { ResourceData } from '../../data/resource-data';
 import { PredictionEvent } from 'src/app/prediction-event';
+import { CarouselCardComponent } from '../carousel-card/carousel-card.component';
 
 @Component({
   selector: 'app-search',
@@ -40,6 +41,12 @@ export class SearchComponent implements OnInit {
     else if(this.gesture == 'One Open Hand and One Closed Hand') {
       if(this.searchString) {
         this.search();
+      }
+    }
+    if(this.searchCategory == 'artist' || this.searchCategory == 'album') {
+      if(this.gesture == 'Open Hand') {
+        var id = document.getElementById("searchCard");
+        window.location.href = id.getAttribute("href");
       }
     }
   }
