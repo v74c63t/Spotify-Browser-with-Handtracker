@@ -1,7 +1,3 @@
-<!-- <div>
-	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
-	<div [innerHTML]="gesture"></div>
-</div> -->
 
 <div class="background">
 	<div>
@@ -21,6 +17,7 @@
 					<br>
 					Hand Pointing: Select Artist
 				</p>
+				<strong>Selected Artist:</strong> {{track.artists[i].name}}
 			</div>
 		</div>
 		<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
