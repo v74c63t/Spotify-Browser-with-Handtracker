@@ -22,6 +22,7 @@
 				<br>	
 			</p>
 			<div *ngIf="resources">
+				<h5><strong>Selections</strong></h5>
 				<strong>Selected Category:</strong> {{resources[0].category}}
 				<div *ngIf="resources[0].category == 'track'">
 					<strong>Selected Track:</strong> {{resources[k].name}}
