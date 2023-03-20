@@ -13,12 +13,4 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  prediction(event: PredictionEvent){
-    this.gesture = event.getPrediction();
-    // localStorage.setItem('gesture', this.gesture);
-    // if(this.gesture == "Two Open Hands") {
-    //   window.location.href = 'https://open.spotify.com/user/31by4hs6trtycq5feotdj2jskhrq';
-    // }
-  }
-
 }
