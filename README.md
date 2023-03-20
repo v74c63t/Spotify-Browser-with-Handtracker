@@ -2,7 +2,7 @@
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
-10/15
+11/15
 - 4/5 Created a functional web app
 - 1.5/2 The ability to control the web app with basic gestures
 - 3/4 The ability to control the web app with at least two custom gestures
@@ -32,16 +32,10 @@ No, there is nothing special you need to know to run my code.
 I did not really design my app with a particular type of user in mind.
 
 7. Describe the two custom gestures you created.
-One Open Hand and One Closed Hand (generally used for opening pages)
+One Open Hand and One Closed Hand (generally used for opening pages, was used once for search)
 One Open Hand and One Hand Pointing (used for selecting categories/pages)
 
-Basic gestures used:
-Two Open Hands
-Two Closed Hands
-One Hand Pointing
-Two Hands Pointing
-Open Hand
-Closed Hand
+Basic gestures used: Two Open Hands, Two Closed Hands, One Hand Pointing, Two Hands Pointing, Open Hand, Closed Hand
 
 8. How does your app implement or follow principles of good UI design?
 Users are able to navigate through most of the browser easily with hand gestures as well as being allowed to use it normally with the original A3 functonalities and many gestures have similar functions on each page (two hands pointing moving forward in the track list, open hand opening a selected page or some sort of page, and so on). Right next to each handtracker, there is a list of gestures and their functionalities so users can easily refer to them while they are using the handtracker.
