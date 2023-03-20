@@ -2,7 +2,10 @@
 <div>
 	<br>
 	<div class="row">
-		<div class="col"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
+		<div class="col">
+			<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+			<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
+		</div>
 		<div class="col" style="color:antiquewhite">
 			<h5><strong>Gestures</strong></h5>
 			<p>
@@ -36,7 +39,6 @@
 			</div>
 		</div>
 	</div>
-	<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
 </div>
 <!--TODO: bind input's model to searchString-->
 <input [(ngModel)]="searchString" (keyup.enter) =  "search()">

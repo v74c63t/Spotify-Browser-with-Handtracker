@@ -88,14 +88,14 @@ export class ArtistPageComponent implements OnInit {
         if(this.i > this.relatedArtists.length-1){
           this.i = 0;
         }
-        this.gesture = "Two Hands Pointing - " + (this.i+1);
+        this.gesture = "Two Hands Pointing - " + this.relatedArtists[this.i].name;
       }
       if(this.gesture == "One Open Hand and One Hand Pointing") {
         this.i--;
         if(this.i < 0){
           this.i = this.relatedArtists.length-1;
         }
-        this.gesture = "One Open Hand and One Hand Pointing - " + (this.i+1);
+        this.gesture = "One Open Hand and One Hand Pointing - " + this.relatedArtists[this.i].name;
       }
       if(this.gesture == "Open Hand") {
         window.location.href = "/artist/" + this.relatedArtists[this.i].id;
@@ -107,14 +107,14 @@ export class ArtistPageComponent implements OnInit {
         if(this.j > this.albums.length-1){
           this.j = 0;
         }
-        this.gesture = "Two Hands Pointing - " + (this.j+1);
+        this.gesture = "Two Hands Pointing - " + this.albums[this.j].name;
       }
       if(this.gesture == "One Open Hand and One Hand Pointing") {
         this.j--;
         if(this.j < 0){
           this.j = this.albums.length-1;
         }
-        this.gesture = "One Open Hand and One Hand Pointing - " + (this.j+1);
+        this.gesture = "One Open Hand and One Hand Pointing - " + this.albums[this.j].name;
       }
       if(this.gesture == "Open Hand") {
         window.location.href = "/album/" + this.albums[this.j].id;

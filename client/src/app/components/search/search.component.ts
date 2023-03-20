@@ -89,14 +89,14 @@ export class SearchComponent implements OnInit {
         if(this.i > this.resources.length-1){
           this.i = 0;
         }
-        this.gesture = "Two Hands Pointing - " + (this.i+1);
+        this.gesture = "Two Hands Pointing - " + this.resources[this.i].name;
       }
       if(this.gesture == 'Two Closed Hands') {
         this.i--;
         if(this.i < 0) {
           this.i = this.resources.length-1;
         }
-        this.gesture = "Two Closed Hands - " + (this.i+1);
+        this.gesture = "Two Closed Hands - " + this.resources[this.i].name;
       }
       if(this.gesture == "Open Hand") {
         window.location.href = "/artist/" + this.resources[this.i].id;
@@ -108,14 +108,14 @@ export class SearchComponent implements OnInit {
         if(this.j > this.resources.length-1){
           this.j = 0;
         }
-        this.gesture = "Two Hands Pointing - " + (this.j+1);
+        this.gesture = "Two Hands Pointing - " + this.resources[this.j].name;
       }
       if(this.gesture == 'Two Closed Hands') {
         this.j--;
         if(this.j < 0) {
           this.j = this.resources.length-1;
         }
-        this.gesture = "Two Closed Hands - " + (this.j+1);
+        this.gesture = "Two Closed Hands - " + this.resources[this.j].name;
       }
       if(this.gesture == "Open Hand") {
         window.location.href = "/album/" + this.resources[this.j].id;
