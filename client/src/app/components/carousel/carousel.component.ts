@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ResourceData } from '../../data/resource-data';
 
 @Component({
@@ -9,7 +9,6 @@ import { ResourceData } from '../../data/resource-data';
 export class CarouselComponent implements OnInit {
 	@Input() carouselId:string;
 	@Input() resources:ResourceData[];
-  @Input() cardId:string;
 
   constructor() { }
 
