@@ -63,7 +63,7 @@ export class ArtistPageComponent implements OnInit {
         this.toggle = "Track";
       }
     }
-    if(this.toggle == "Top Tracks") {
+    if(this.toggle == "Track") {
       if(this.gesture == "Two Hands Pointing") {
         this.k++;
         if(this.k > this.topTracks.length-1){
@@ -88,7 +88,7 @@ export class ArtistPageComponent implements OnInit {
         if(this.i > this.relatedArtists.length-1){
           this.i = 0;
         }
-        this.gesture = "Two Hands Pointing - " + (this.k+1);
+        this.gesture = "Two Hands Pointing - " + (this.i+1);
       }
       if(this.gesture == "One Open Hand and One Hand Pointing") {
         this.i--;

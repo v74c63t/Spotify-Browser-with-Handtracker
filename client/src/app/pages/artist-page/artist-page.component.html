@@ -28,7 +28,10 @@
 			<div>
 				<br>
 				<div class="row">
-					<div class="col"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
+					<div class="col">
+						<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+						<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
+					</div>
 					<div class="col" style="color:antiquewhite; font-size: 15px;">
 						<h5><strong>Gestures</strong></h5>
 						<p>
@@ -61,7 +64,6 @@
 						
 					</div>
 				</div>
-				<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
 			</div>
 		</div>
 	</div>
