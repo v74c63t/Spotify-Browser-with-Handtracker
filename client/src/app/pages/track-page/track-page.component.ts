@@ -17,7 +17,7 @@ export class TrackPageComponent implements OnInit {
 	trackId:string;
 	track:TrackData;
   audioFeatures:TrackFeature[];
-  i: number = 0;
+  i: number = 0; // artist index
 
   constructor(private route: ActivatedRoute, private spotifyService: SpotifyService) { }
 

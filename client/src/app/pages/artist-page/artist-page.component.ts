@@ -18,10 +18,10 @@ export class ArtistPageComponent implements OnInit {
 	relatedArtists:ArtistData[];
 	topTracks:TrackData[];
 	albums:AlbumData[];
-  k:number = 0;
-  i:number = 0;
-  j:number = 0;
-  toggle:string = "Track";
+  k:number = 0; // top tracks index
+  i:number = 0; // similar artist index
+  j:number = 0; // artist's albums index
+  toggle:string = "Track"; // selected category
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
 

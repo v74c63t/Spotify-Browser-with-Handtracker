@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
   resources:ResourceData[];
-  k: number=0;
-  i: number=0;
-  j: number=0;
+  k: number=0; // track index
+  i: number=0; // artist index
+  j: number=0; // album index
 
   constructor(private spotifyService:SpotifyService) { }
 
@@ -45,23 +45,6 @@ export class SearchComponent implements OnInit {
     else if(this.gesture == 'One Open Hand and One Closed Hand') {
       if(this.searchString) {
         this.search();
-      }
-    }
-    if(this.searchCategory == 'artist' || this.searchCategory == 'album') {
-      if(this.gesture == 'Open Hand') {
-        // var test = document.getElementById("test");
-        // // console.log(test.getAttributeNames());
-        // document.getElementById("searchCarousel").focus();
-        // window.setTimeout(() => document.getElementById("searchCarousel").focus(), 0);
-        // console.log(id.getAttributeNames());
-        // console.log(id.getAttribute("href"));
-        // console.log(document.activeElement);
-        // console.log(test.getAttribute("value"));
-        // window.location.href = id.getAttribute("href");
-        // console.log(this.searchCarouselView);
-        // console.log(this.carouselCardView);
-        // id.focus();
-        // console.log(document.activeElement);
       }
     }
     if(this.resources[0].category == 'track') {

@@ -16,8 +16,8 @@ export class AlbumPageComponent implements OnInit {
 	albumId:string;
 	album:AlbumData;
 	tracks:TrackData[];
-  i:number = 0;
-  k:number = 0;
+  i:number = 0; // album index
+  k:number = 0; // track index
 
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
@@ -35,9 +35,7 @@ export class AlbumPageComponent implements OnInit {
 
   prediction(event: PredictionEvent){
     this.gesture = event.getPrediction();
-    // localStorage.setItem('gesture', this.gesture);
     if(this.gesture == "Two Open Hands") {
-      //window.location.href = 'https://open.spotify.com/user/31by4hs6trtycq5feotdj2jskhrq';
       if(this.album) {
         window.location.href = this.album.url;
       }
