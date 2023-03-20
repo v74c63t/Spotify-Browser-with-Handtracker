@@ -19,7 +19,9 @@ export class ArtistPageComponent implements OnInit {
 	topTracks:TrackData[];
 	albums:AlbumData[];
   k:number = 0;
-  toggle:string = "Album";
+  i:number = 0;
+  j:number = 0;
+  toggle:string = "Track";
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) { }
 
@@ -42,9 +44,7 @@ export class ArtistPageComponent implements OnInit {
   }
   prediction(event: PredictionEvent){
     this.gesture = event.getPrediction();
-    // localStorage.setItem('gesture', this.gesture);
     if(this.gesture == "Two Open Hands") {
-      //window.location.href = 'https://open.spotify.com/user/31by4hs6trtycq5feotdj2jskhrq';
       if(this.artist) {
         window.location.href = this.artist.url;
       }
@@ -52,36 +52,74 @@ export class ArtistPageComponent implements OnInit {
     else if(this.gesture == "Two Closed Hands") {
       window.location.href = "/"
     }
-    else if(this.gesture == "One Open Hand and One Closed Hand") {
-      window.location.href = "/track/" + this.topTracks[this.k].id;
-    }
-    else if(this.gesture == "Two Hands Pointing") {
-      this.k++;
-      if(this.k > this.topTracks.length-1){
-        this.k = 0;
-      }
-      this.gesture = "Two Hands Pointing - " + (this.k+1);
-    }
-    else if(this.gesture == "Hand Pointing") {
-      this.toggle = "Album";
-      console.log(this.toggle);
-    }
     else if(this.gesture == "Closed Hand") {
-      this.toggle = "Artist";
-      console.log(this.toggle);
-    }
-    if(this.gesture == "Open Hand") {
-      console.log(this.toggle);
-      if(this.toggle == "Album") {
-        var id = document.getElementById("artistAlbumCard");
-        window.location.href = id.getAttribute("href");
+      if(this.toggle == "Track") {
+        this.toggle = "Album";
+      }
+      else if(this.toggle == "Album") {
+        this.toggle = "Artist";
       }
       else if(this.toggle == "Artist") {
-        var id = document.getElementById("similarArtistCard");
-        window.location.href = id.getAttribute("href");
+        this.toggle = "Track";
       }
     }
-
+    if(this.toggle == "Top Tracks") {
+      if(this.gesture == "Two Hands Pointing") {
+        this.k++;
+        if(this.k > this.topTracks.length-1){
+          this.k = 0;
+        }
+        this.gesture = "Two Hands Pointing - " + (this.k+1);
+      }
+      if(this.gesture == "One Open Hand and One Hand Pointing") {
+        this.k--;
+        if(this.k < 0){
+          this.k = this.topTracks.length-1;
+        }
+        this.gesture = "One Open Hand and One Hand Pointing - " + (this.k+1);
+      }
+      if(this.gesture == "Open Hand") {
+        window.location.href = "/track/" + this.topTracks[this.k].id;
+      }
+    }
+    if(this.toggle == "Artist") {
+      if(this.gesture == "Two Hands Pointing") {
+        this.i++;
+        if(this.i > this.relatedArtists.length-1){
+          this.i = 0;
+        }
+        this.gesture = "Two Hands Pointing - " + (this.k+1);
+      }
+      if(this.gesture == "One Open Hand and One Hand Pointing") {
+        this.i--;
+        if(this.i < 0){
+          this.i = this.relatedArtists.length-1;
+        }
+        this.gesture = "One Open Hand and One Hand Pointing - " + (this.i+1);
+      }
+      if(this.gesture == "Open Hand") {
+        window.location.href = "/artist/" + this.relatedArtists[this.i].id;
+      }
+    }
+    if(this.toggle == "Album") {
+      if(this.gesture == "Two Hands Pointing") {
+        this.j++;
+        if(this.j > this.albums.length-1){
+          this.j = 0;
+        }
+        this.gesture = "Two Hands Pointing - " + (this.j+1);
+      }
+      if(this.gesture == "One Open Hand and One Hand Pointing") {
+        this.j--;
+        if(this.j < 0){
+          this.j = this.albums.length-1;
+        }
+        this.gesture = "One Open Hand and One Hand Pointing - " + (this.j+1);
+      }
+      if(this.gesture == "Open Hand") {
+        window.location.href = "/album/" + this.albums[this.j].id;
+      }
+    }
   }
 
 }

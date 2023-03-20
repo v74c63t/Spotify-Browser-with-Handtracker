@@ -1,28 +1,5 @@
-<!-- <div>
-	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
-	<div [innerHTML]="gesture"></div>
-</div> -->
 
 <div class = "background">
-	<!-- <div>
-		<br>
-		<div class="row">
-			<div class="col-3"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
-			<div class="col" style="color:antiquewhite">
-				<h5><strong>Gestures</strong></h5>
-				<p>
-					Two Open Hands: Open Page on Spotify
-					<br>
-					Two Closed Hands: Return to Home Page
-					<br>
-					One Open Hand and One Closed Hand: Open Track Page
-					<br>
-					Two Hands Pointing: Select Track
-				</p>
-			</div>
-		</div>
-		<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
-	</div> -->
 	<div *ngIf="artist" class="row">
 		<div class="col-6">
 			<!--TODO: populate with artist name-->
@@ -52,17 +29,35 @@
 				<br>
 				<div class="row">
 					<div class="col"><app-handtracker (onPrediction)="prediction($event)"></app-handtracker></div>
-					<div class="col" style="color:antiquewhite">
+					<div class="col" style="color:antiquewhite; font-size: 15px;">
 						<h5><strong>Gestures</strong></h5>
 						<p>
 							Two Open Hands: Open Page on Spotify
 							<br>
 							Two Closed Hands: Return to Home Page
 							<br>
-							One Open Hand and One Closed Hand: Open Track Page
+							Closed Hand: Select Category
 							<br>
-							Two Hands Pointing: Select Track
+							Two Hands Pointing: Select Artist/Album/Track (Move Forward)
+							<br>
+							One Open Hand and One Hand Pointing: Select Artist/Album/Track (Move Back)
 						</p>
+						<div *ngIf="toggle=='Track'">
+							<strong>Selected Category:</strong> Top Tracks
+							<br>
+							<strong>Selected Track:</strong> {{topTracks[k].name}}
+						</div>
+						<div *ngIf="toggle=='Album'">
+							<strong>Selected Category:</strong> Artist's Albums
+							<br>
+							<strong>Selected Artist's Album:</strong> {{albums[j].name}}
+						</div>
+						<div *ngIf="toggle=='Artist'">
+							<strong>Selected Category:</strong> Similar Artists
+							<br>
+							<strong>Selected Related Artist:</strong> {{relatedArtists[i].name}}
+						</div>
+						
 					</div>
 				</div>
 				<div [innerHTML]="gesture" style="color: antiquewhite;"></div>
@@ -75,12 +70,12 @@
 			<!--TODO: display artist name-->
 			<h3>{{artist.name}}'s Albums</h3>
 			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
-			<app-carousel carouselId="artistAlbumCarousel" [resources]="albums" cardId="artistAlbumCard"></app-carousel>
+			<app-carousel carouselId="artistAlbumCarousel" [resources]="albums"></app-carousel>
 		</div>
 		<div class="col-6">
 			<h3>Similar Artists</h3>
 			<!--TODO: Display a carousel component for similar artists. Bind carousel's resources and give it a static carouselId.-->
-			<app-carousel carouselId="similarArtistsCarousel" [resources]="relatedArtists" cardId="similarArtistCard"></app-carousel>
+			<app-carousel carouselId="similarArtistsCarousel" [resources]="relatedArtists"></app-carousel>
 		</div>
 
 	</div>
