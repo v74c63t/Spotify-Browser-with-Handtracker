@@ -1,3 +1,11 @@
 nav {
 	margin-bottom: 20px;
 }
+
+.navbar-text{
+	color:darkorange;
+}
+
+#browsing:hover{
+	color:red;
+}
