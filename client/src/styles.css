@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-	background-color: var(--bs-gray-dark);
-	color: var(--bs-light);
+	background-color: darkslategray;
+	color: darkblue;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -16,8 +16,9 @@ h2, h3 {
 
 button, .btn {
 	margin: 10px;
+	color:darkred;
 }
 
 a {
-	color: var(--bs-orange);
+	color: orange;
 }
